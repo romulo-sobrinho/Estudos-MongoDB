@@ -20,7 +20,10 @@
 
 ## Features
 
-  ✔️ Criação, uso e exclusão de bases de dados <br>
+  #### Base de dados
+    ✔️ Criação e exclusão de bases de dados <br>
+    ✔️ Listar bases de dados <br>
+    ✔️ Utilizar/trocar de base de dados <br>
   
 
 ## Preview
