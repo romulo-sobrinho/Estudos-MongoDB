@@ -1,4 +1,4 @@
-![Rômulo Sobrinho](https://user-images.githubusercontent.com/68918326/179403887-79a5dddb-d090-456c-b1ad-8ec3820c140a.PNG)
+![Rômulo Sobrinho](https://user-images.githubusercontent.com/68918326/180336596-0f001ae5-5ce5-4175-bcea-78eff17add17.PNG)
 
 <hr>
 <h3 align="center">🎖️PROJETO EM CONSTRUÇÃO🎖️</h3>
@@ -21,10 +21,14 @@
 ## Features
 
   #### Base de dados
-    ✔️ Criação e exclusão de bases de dados <br>
-    ✔️ Listar bases de dados <br>
-    ✔️ Utilizar/trocar de base de dados <br>
+    ✔️ Criar e excluir de bases de dados
+    ✔️ Listar bases de dados
+    ✔️ Utilizar/trocar de base de dados
   
+  #### Coleções
+    ✔️ Criar e excluir collections
+    ✔️ Listar collections
+    ✔️ Inserir documento na collection
 
 ## Preview
 
