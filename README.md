@@ -30,6 +30,12 @@
     ✔️ Listar collections
     ✔️ Inserir documento na collection
 
+  #### Documentos
+    ✔️ Inserir documentos
+    ✔️ Pesquisar documentos - método find()
+    ✔️ Limitar amostra de documentos - método limit()
+    ✔️ Ordenar documentos - método sort()
+
 ## Preview
 
 <br>
