@@ -1,0 +1,24 @@
+{
+  "name": "estudos-mongodb",
+  "version": "1.0.0",
+  "description": "![Rômulo Sobrinho](https://user-images.githubusercontent.com/68918326/180336596-0f001ae5-5ce5-4175-bcea-78eff17add17.PNG)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romulo-sobrinho/Estudos-MongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romulo-sobrinho/Estudos-MongoDB/issues"
+  },
+  "homepage": "https://github.com/romulo-sobrinho/Estudos-MongoDB#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.6"
+  }
+}
