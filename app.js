@@ -10,6 +10,31 @@ const mongoose = require('mongoose')
 //   url: String
 // })
 
+//Schema para o db blog
+const postsSchema = new mongoose.Schema({
+  like: {type: Number, default: 0},
+  title: {type: String, required: true},
+  description: String,
+})
+
+//Coleção posts para o blog
+const Post = mongoose.model('Post', postsSchema)
+
+//Criação do documento conforme a partir da coleção
+let post = new Post({
+  title: "Aviso aos professores",
+  description: "Atualizem as notas dos alunos até 25/07/2022"
+})
+
+//Salvando o documento na base de dados
+post.save()
+.then( document => {
+  console.log(`Documento salvo com sucesso: ${document}`)
+})
+.catch( error => {
+  console.log(`Houve um erro ao tentar salvar o documento: ${error}`)
+})
+
 // const Link = mongoose.model('Link', linksSchema)
 
 // let link = new Link({
@@ -52,23 +77,23 @@ const mongoose = require('mongoose')
 // })
 
 // 2ª Maneira - utilizando promise
-// mongoose.connect('mongodb://localhost/blog').then(db => {
-//   console.log("Banco conectado com sucesso", db)
-// }).catch(error => {
-//   console.log("Ocorreu um erro ao conectar o banco de dados", error)
-// })
-
-// 3ª Maneira - utilizando variáveis de evento
-mongoose.connect('mongodb://localhost/blog')
-let db = mongoose.connection
-
-db.on('error', () => {
+mongoose.connect('mongodb://localhost/blog').then(db => {
+  console.log("Banco conectado com sucesso", db)
+}).catch(error => {
   console.log("Ocorreu um erro ao conectar o banco de dados", error)
 })
 
-db.once('open', () => {
-  console.log("Banco conectado com sucesso", db)
-})
+// 3ª Maneira - utilizando variáveis de evento
+// mongoose.connect('mongodb://localhost/blog')
+// let db = mongoose.connection
+
+// db.on('error', () => {
+//   console.log("Ocorreu um erro ao conectar o banco de dados", error)
+// })
+
+// db.once('open', () => {
+//   console.log("Banco conectado com sucesso", db)
+// })
 
 app.get('/', (req, res) => {
   res.send("Hello World")
