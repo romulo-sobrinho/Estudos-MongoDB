@@ -22,8 +22,8 @@ const Post = mongoose.model('Post', postsSchema)
 
 //Criação do documento conforme a partir da coleção
 let post = new Post({
-  title: "Aviso aos professores",
-  description: "Atualizem as notas dos alunos até 25/07/2022"
+  title: "Aviso aos Alunos",
+  description: "As notas dos alunos serão divulgadas dia 26/07/2022"
 })
 
 //Salvando o documento na base de dados
@@ -33,6 +33,23 @@ post.save()
 })
 .catch( error => {
   console.log(`Houve um erro ao tentar salvar o documento: ${error}`)
+})
+
+//Conectando ao banco de dados e mostrando todos os posts
+mongoose.connect('mongodb://localhost/blog').then(db => {
+  console.log("Banco conectado com sucesso")
+  app.get('/', async (req, res) => {
+    try {
+      let document = await Post.find()
+      res.send(document)
+    }
+    catch (error) {
+      console.log(`Houve um erro ao buscar os dados ${error}`)
+    }
+
+  })
+}).catch(error => {
+  console.log(`Ocorreu um erro ao conectar o banco de dados ${error}`)
 })
 
 // const Link = mongoose.model('Link', linksSchema)
@@ -77,11 +94,11 @@ post.save()
 // })
 
 // 2ª Maneira - utilizando promise
-mongoose.connect('mongodb://localhost/blog').then(db => {
-  console.log("Banco conectado com sucesso", db)
-}).catch(error => {
-  console.log("Ocorreu um erro ao conectar o banco de dados", error)
-})
+// mongoose.connect('mongodb://localhost/blog').then(db => {
+//   console.log("Banco conectado com sucesso", db)
+// }).catch(error => {
+//   console.log("Ocorreu um erro ao conectar o banco de dados", error)
+// })
 
 // 3ª Maneira - utilizando variáveis de evento
 // mongoose.connect('mongodb://localhost/blog')
@@ -95,9 +112,9 @@ mongoose.connect('mongodb://localhost/blog').then(db => {
 //   console.log("Banco conectado com sucesso", db)
 // })
 
-app.get('/', (req, res) => {
-  res.send("Hello World")
-})
+// app.get('/', (req, res) => {
+//   res.send("Hello World")
+// })
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`)
