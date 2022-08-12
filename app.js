@@ -2,15 +2,22 @@ const express = require('express')
 const PORT = 3000
 const app = express()
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const linkRoute = require('./routes/linkRoute')
+const path = require('path');
 
 //Conectando ao banco de dados
-mongoose.connect('mongodb://localhost/links').then(db => {
+mongoose.connect('mongodb://localhost/linkPost').then(db => {
   console.log("Banco conectado com sucesso")
 }).catch(error => {
   console.log(`Ocorreu um erro ao conectar o banco de dados ${error}`)
 })
 
+app.set('view engine', 'ejs') //definindo qual o template engine que será usado, no caso EJS
+app.set('views', path.join(__dirname, 'templates')) // aqui está dizendo que as views do ejs serão setadas na pasta templates
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false}))
 app.use('/', linkRoute)
 
 app.listen(PORT, () => {
