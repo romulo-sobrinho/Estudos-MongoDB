@@ -18,6 +18,7 @@
 
   <script>
     function deleteLink(id) {
+      //Poderia ter passado o localhost no lugar do /
       fetch('/' + id, {method: 'DELETE'})
       .then(res => {
 
